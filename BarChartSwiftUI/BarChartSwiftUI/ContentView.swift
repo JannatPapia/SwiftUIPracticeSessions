@@ -32,7 +32,11 @@ struct ContentView: View {
                     .padding(.horizontal, 24)
                 
                 HStack (spacing: 16) {
-                    VStack {
+                    BarView(value: 50) // initialize upper sloving value
+                    BarView(value: 100)
+                    BarView(value: 150)
+                    
+                  /*  VStack {
                     ZStack (alignment: .bottom) {
                         Capsule().frame(width: 30, height: 200)
                             .foregroundColor(Color.green) // for Bars background Color
@@ -64,8 +68,8 @@ struct ContentView: View {
                     Text("D") // add text for bars
                             .padding(.top, 8)
                 }
+                   */
                 }
-                    
                     .padding(.top, 24)
         }
             }
@@ -73,7 +77,23 @@ struct ContentView: View {
     }
 
 
-
+struct BarView: View {
+    var value: CGFloat
+    
+    var body: some View {
+        
+        VStack {
+        ZStack (alignment: .bottom) {
+            Capsule().frame(width: 30, height: 200)
+                .foregroundColor(Color.green) // for Bars background Color
+            Capsule().frame(width: 30, height: value)
+                .foregroundColor(.white) // for Bars background Color
+        }
+        Text("D") // add text for bars
+                .padding(.top, 8)
+    }
+    }
+}
 
 
 struct ContentView_Previews: PreviewProvider {
