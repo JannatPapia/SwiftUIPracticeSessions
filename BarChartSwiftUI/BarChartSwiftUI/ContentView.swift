@@ -11,9 +11,9 @@ struct ContentView: View {
     @State var pickerSelectedItem = 0
     
     @State var dataPoints: [[CGFloat]] = [
-             [ 50,100,150],
-             [150,100,50],
-             [10,20,30]
+             [ 50,100,150,120,40,80,200],
+             [150,100,50, 60,80,30,90],
+             [50,20,30,40,80,50,70]
     ]
     
     var body: some View {
@@ -43,6 +43,12 @@ struct ContentView: View {
                     BarView(value: dataPoints[pickerSelectedItem][0])
                     BarView(value: dataPoints[pickerSelectedItem][1])
                     BarView(value: dataPoints[pickerSelectedItem][2])
+                    BarView(value: dataPoints[pickerSelectedItem][3])
+                    BarView(value: dataPoints[pickerSelectedItem][4])
+                    BarView(value: dataPoints[pickerSelectedItem][5])
+                    BarView(value: dataPoints[pickerSelectedItem][6])
+
+
                     
                   /*  VStack {
                     ZStack (alignment: .bottom) {
