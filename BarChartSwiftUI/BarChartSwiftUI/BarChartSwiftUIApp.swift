@@ -8,6 +8,7 @@
 import SwiftUI
 
 @main
+
 struct BarChartSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {

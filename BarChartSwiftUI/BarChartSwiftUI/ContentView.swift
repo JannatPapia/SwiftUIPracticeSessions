@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  BarChartUI
+//  BarCharSwifttUI
 //
 //  Created by Jannatun Nahar Papia  on 7/2/22.
 //
@@ -13,7 +13,7 @@ struct ContentView: View {
         // use ZStack for background color
         ZStack {
             
-            Color.pink.edgesIgnoringSafeArea(.all)
+            Color.purple.edgesIgnoringSafeArea(.all)
             // use VStack for weekday line
             VStack {
                 
@@ -29,22 +29,56 @@ struct ContentView: View {
                 Text("Evening").tag(2)
             }.pickerStyle(SegmentedPickerStyle())
                 //add some padding value horizontally
-                padding(.horizontal, 24)
+                    .padding(.horizontal, 24)
                 
-                HStack {
-                    ZStack {
+                HStack (spacing: 16) {
+                    VStack {
+                    ZStack (alignment: .bottom) {
                         Capsule().frame(width: 30, height: 200)
+                            .foregroundColor(Color.green) // for Bars background Color
                         Capsule().frame(width: 30, height: 100)
-                            .foregroundColor(.white)
+                            .foregroundColor(.white) // for Bars background Color
                     }
+                    Text("D") // add text for bars
+                            .padding(.top, 8)
                 }
+                    
+                    VStack {
+                    ZStack (alignment: .bottom) {
+                        Capsule().frame(width: 30, height: 200)
+                            .foregroundColor(Color.green) // for Bars background Color
+                        Capsule().frame(width: 30, height: 100)
+                            .foregroundColor(.white) // for Bars background Color
+                    }
+                    Text("D") // add text for bars
+                            .padding(.top, 8)
+                }
+                    
+                    VStack {
+                    ZStack (alignment: .bottom) {
+                        Capsule().frame(width: 30, height: 200)
+                            .foregroundColor(Color.green) // for Bars background Color
+                        Capsule().frame(width: 30, height: 100)
+                            .foregroundColor(.white) // for Bars background Color
+                    }
+                    Text("D") // add text for bars
+                            .padding(.top, 8)
+                }
+                }
+                    
+                    .padding(.top, 24)
         }
+            }
         }
     }
-}
+
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+
