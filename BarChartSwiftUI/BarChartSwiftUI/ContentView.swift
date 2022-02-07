@@ -9,6 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State var pickerSelectedItem = 0
+    
+    @State var dataPoints: [[CGFloat]] = [
+             [ 50,100,150],
+             [150,100,50],
+             [10,20,30]
+    ]
+    
     var body: some View {
         // use ZStack for background color
         ZStack {
@@ -32,9 +39,10 @@ struct ContentView: View {
                     .padding(.horizontal, 24)
                 
                 HStack (spacing: 16) {
-                    BarView(value: 50) // initialize upper sloving value
-                    BarView(value: 100)
-                    BarView(value: 150)
+                  //  BarView(value: 50) // initialize upper sloving value
+                    BarView(value: dataPoints[pickerSelectedItem][0])
+                    BarView(value: dataPoints[pickerSelectedItem][1])
+                    BarView(value: dataPoints[pickerSelectedItem][2])
                     
                   /*  VStack {
                     ZStack (alignment: .bottom) {
@@ -69,8 +77,8 @@ struct ContentView: View {
                             .padding(.top, 8)
                 }
                    */
-                }
-                    .padding(.top, 24)
+                }.padding(.top, 24)
+                    .animation(.default)
         }
             }
         }
